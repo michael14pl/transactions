@@ -1,0 +1,32 @@
+@import '../../styles/variables.scss';
+
+
+#add-trasaction {
+    padding: 10px;
+    color: $mainColor;
+    height: 35vh;
+    border-right: 2px solid $mainColor;
+}
+
+form {
+    margin: 30px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    
+    input {
+        margin: 5px 10px;
+        padding: 5px;
+        font-size: 20px;
+        color: $mainColor;
+        border: 2px solid #D8D7DF;
+        border-radius: 5px;
+        width: 25vw;
+        outline: none;
+    }
+
+    .currency {
+        width: 80px;
+    }
+}
+

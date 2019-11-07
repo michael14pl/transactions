@@ -1,0 +1,21 @@
+@import '../../styles/variables.scss';
+
+
+#transaction-sum {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 25vh;
+    padding: 10px;
+    background-color: $mainColor;
+    
+    h2 {
+        display: flex;
+        align-items: center;
+
+        span {
+            margin: 0 20px;
+            font-size: 3rem;
+        }
+    }    
+}

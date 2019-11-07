@@ -1,0 +1,26 @@
+@import '../../styles/variables.scss';
+
+@import '../../styles/variables.scss';
+@import '../../styles/mixins.scss';
+
+
+#top-transaciton {
+    padding: 10px;
+    height: 40vh;
+    color: $mainColor;
+    border-top: 2px solid $mainColor;
+    border-right: 2px solid $mainColor;
+
+    h2{ 
+        display: flex;
+        justify-content: center;
+    }
+
+    ul {
+        @include list;
+        
+        li {
+        padding: 0 160px 10px 0;
+        }
+    }
+}

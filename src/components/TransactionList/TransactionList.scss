@@ -1,0 +1,32 @@
+@import '../../styles/variables.scss';
+@import '../../styles/mixins.scss';
+
+
+#transaction-list {
+    padding: 10px;
+    color: $mainColor;
+    height: 50vh;
+
+    h2{ 
+        display: flex;
+        justify-content: center;
+    }
+
+    ul {
+        @include list;
+
+        li {
+            padding: 0 240px 10px 0;
+        }
+
+.icon {
+    cursor: pointer;
+    transition: 0.2s all;
+}
+
+.icon:hover {
+    color: gray;
+} 
+
+}
+}

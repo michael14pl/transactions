@@ -1,0 +1,47 @@
+@mixin list {
+        padding: 10px 50px;
+        margin: 0;
+
+        #list-head {
+            font-weight: 500;
+            font-size: 1.2rem;
+            margin: 0 0 5px;
+        }
+        
+    li{ 
+        position: relative;
+        list-style-type: none;
+        @content;
+
+        span{ 
+            word-wrap: break-word;
+        }
+
+        span.third {
+            position: absolute;
+            right: 0;
+            top: 0;
+            display: inline-block;
+            text-align: right;
+            width: 80px;
+        }
+
+        span.second {
+            position: absolute;
+            top: 0;
+            right: 80px;
+            display: inline-block;
+            text-align: right;
+            width: 80px;
+            }
+
+        span.first {
+            position: absolute;
+            top: 0;
+            right: 160px;
+            display: inline-block;
+            text-align: right;
+            width: 80px;
+            }
+        }
+    }
