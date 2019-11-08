@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
-import './Converter.scss';
+import * as Yup from 'yup';
 import { connect } from 'react-redux';
 import { euroCost } from '../../actions/TransferAction';
 import { Formik, Form, Field } from 'formik';
-import * as Yup from 'yup';
+import './Converter.scss';
+
 
 
 const formValidation = Yup.object().shape({

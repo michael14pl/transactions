@@ -30,13 +30,20 @@
         margin: 0;
         
         input{
-            width: 120px;
+            padding: 5px;
+            font-size: 18px;
             color: $mainColor;
+            border: 2px solid rgb(214, 214, 214);
+            border-radius: 5px;
+            outline: none;
+            margin: 10px;
+            width: 120px;
         }
 
         .errors-pln {
             position: absolute;
             width: auto;
+            padding: 3px 0;
             text-align: left;
             top: 30%;
             left: 140px;

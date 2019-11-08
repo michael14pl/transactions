@@ -22,7 +22,7 @@ class AddTransaction extends Component {
 
     handleSubmit = (values) => {
         this.props.addTransfer(values.name, values.amount);
-        document.getElementById('myFormTransaction').reset();
+        document.getElementById('addTransaction-fornik-form').reset();
     }
 
     render() {
@@ -34,21 +34,23 @@ class AddTransaction extends Component {
                     validationSchema={formValidation}
                     onSubmit={(values) => { this.handleSubmit(values) }}>
                     {({ errors, touched }) => (
-                        <Form id="myFormTransaction">
+                        <Form id="addTransaction-fornik-form">
                             <div className="row">
-                                <Field type="text" name="name" placeholder="nazwa transakcji.." />
+                                <Field type="text" name="name" placeholder="nazwa transakcji..." />
                                 {(errors.name && touched.name) &&
-                                    <div >{errors.name}</div>
+                                    <div className="input-error">{errors.name}</div>
                                 }
                             </div>
-                            <div className="row">
-                                <Field className="currency" name="amount" type="text" placeholder="EUR" />
-                                {(errors.amount && touched.amount) &&
-                                    <div className="input-error">{errors.amount}</div>
-                                }
-                            </div>
-                            <div className="row">
-                                <button type="submit">Zarejestruj</button>
+                            <div className="righ-side">
+                                <div className="row">
+                                    <Field className="currency" name="amount" type="text" placeholder="EUR" />
+                                    {(errors.amount && touched.amount) &&
+                                        <div className="input-error">{errors.amount}</div>
+                                    }
+                                </div>
+                                <div className="row">
+                                    <button type="submit">Zapisz</button>
+                                </div>
                             </div>
                         </Form>
                     )}

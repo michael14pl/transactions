@@ -6,27 +6,59 @@
     color: $mainColor;
     height: 35vh;
     border-right: 2px solid $mainColor;
-}
 
-form {
-    margin: 30px;
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    
-    input {
-        margin: 5px 10px;
-        padding: 5px;
-        font-size: 20px;
-        color: $mainColor;
-        border: 2px solid #D8D7DF;
-        border-radius: 5px;
-        width: 25vw;
-        outline: none;
+    h2 {
+        text-align: center;
     }
 
-    .currency {
-        width: 80px;
+    form {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        
+        input {
+            margin: 35px 10px 5px 30px;
+            padding: 5px;
+            font-size: 18px;
+            color: $mainColor;
+            border: 2px solid rgb(214, 214, 214);
+            border-radius: 5px;
+            width: 25vw;
+            outline: none;
+            position: relative;
+        }
+
+        .input-error {
+            position: absolute;
+            margin: 5px 10px 5px 30px;
+        }
+
+        .currency {
+            width: 80px;
+            margin: 35px 0 5px 30px;
+        }
+
+        .righ-side {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        button {
+            font-size: 18px;
+            margin: 35px 30px 5px;
+            padding: 7px 14px;
+            border-radius: 5px;
+            border: none;
+            background-color: $mainColor;
+            color: white;
+            outline: 0;
+            transition: 0.2s all;
+
+            &:hover {
+                cursor: pointer;
+                background-color: $hoverColor;
+                border: none;
+            }
+        }
     }
 }
-

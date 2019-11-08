@@ -1,10 +1,9 @@
 @import '../../styles/variables.scss';
-
-@import '../../styles/variables.scss';
 @import '../../styles/mixins.scss';
 
 
 #top-transaciton {
+    position: relative;
     padding: 10px;
     height: 40vh;
     color: $mainColor;
@@ -12,8 +11,7 @@
     border-right: 2px solid $mainColor;
 
     h2{ 
-        display: flex;
-        justify-content: center;
+        text-align: center;
     }
 
     ul {
@@ -21,6 +19,24 @@
         
         li {
         padding: 0 160px 10px 0;
+        }
+    }
+
+    #signature {
+        position: absolute;
+        bottom: 10px;
+        font-size: 14px;
+        font-weight: 500;
+        color: $hoverColor;
+
+        a{
+            text-decoration: none;
+            color: inherit;
+            transition: 0.2s all;
+
+            &:hover {
+                color: black;
+            }
         }
     }
 }

@@ -15,14 +15,6 @@ library.add(faTrash)
 let store = createStore(rootReducer);
 
 
-// const unsubscribe = store.subscribe(() => {
-//     const state = store.getState();
-//     console.log(state.transactions.transactions1, state.filters.sortBy)
-//     const transactions1 = getVisibleBooks(state.transactions.transactions1, state.filters.sortBy);
-//     const transactions2 = getVisibleBooks(state.transactions.transactions2, state.filters.sortBy);
-// });
-
-
 ReactDOM.render(<Provider store={store}> <App /> </Provider>, document.getElementById('root'));
 
 

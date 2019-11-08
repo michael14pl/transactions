@@ -1,6 +1,6 @@
 import React from 'react';
-import './TransactionSum.scss';
 import { connect } from 'react-redux';
+import './TransactionSum.scss';
 
 
 const TransactionSum = ({ transactions }) => {

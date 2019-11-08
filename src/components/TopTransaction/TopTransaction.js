@@ -1,14 +1,13 @@
 import React from 'react';
-import './TopTransaction.scss';
 import { connect } from 'react-redux';
 import { euroConverter } from '../../functions/euroConverter';
-
+import './TopTransaction.scss';
 
 
 const TopTransaction = ({ transactionsSorted, pln }) => {
     return (
         <div id="top-transaciton">
-            <h2>Top-3 transakcji tego miesiąca</h2>
+            <h2>Top-3 bierzących transakcji</h2>
             <ul>
                 <li id="list-head">
                     <span >Tytuł</span>
@@ -27,6 +26,7 @@ const TopTransaction = ({ transactionsSorted, pln }) => {
                     })
                 }
             </ul>
+            <span id="signature">Created by <a href="https://michal-kawa.herokuapp.com" rel="noopener noreferrer">Michał Kawa</a></span>
         </div>
     )
 }

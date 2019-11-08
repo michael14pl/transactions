@@ -1,13 +1,12 @@
 import React from 'react';
-import './TransactionList.scss';
 import { connect } from 'react-redux';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { deleteTransfer } from '../../actions/TransferAction';
 import { euroConverter } from '../../functions/euroConverter';
+import './TransactionList.scss';
 
 
 const TransactionList = ({ transactions, pln, deleteTransfer }) => {
-    console.log(transactions)
     return (
         <div id="transaction-list">
             <h2>Lista transakcji</h2>
@@ -25,7 +24,7 @@ const TransactionList = ({ transactions, pln, deleteTransfer }) => {
                                 <span>{transaction.name}</span>
                                 <span className="first" > {transaction.amount}</span>
                                 <span className="second"> {euroConverter(transaction.amount, pln)}</span>
-                                <span className="third"><FontAwesomeIcon icon="trash" className="icon" onClick={() => { deleteTransfer(transaction.id) }} /></span>
+                                <span className="third icon"><FontAwesomeIcon icon="trash" onClick={() => { deleteTransfer(transaction.id) }} /></span>
                             </li>
                         )
                     })}
