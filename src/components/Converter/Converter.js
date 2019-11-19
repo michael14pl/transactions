@@ -9,7 +9,7 @@ import './Converter.scss';
 
 const formValidation = Yup.object().shape({
     pln: Yup.number()
-        .moreThan(0, 'Podana kwota wynosi: 0 lub jest ujemna')
+        .moreThan(0, 'Podana kwota wynosi 0 lub jest ujemna')
         .typeError('Podany znak nie jest cyfrą')
 })
 
@@ -30,7 +30,7 @@ class Converter extends Component {
                     <h1>Transakcje walutowe</h1>
                 </div>
                 <div id="converter">
-                    <span>Konwerter: 1 EUR = </span>
+                    <span>1 EUR = </span>
                     <Formik
                         initialValues={{ pln: '' }}
                         validationSchema={formValidation}

@@ -1,5 +1,5 @@
 @mixin list {
-    padding: 10px 50px;
+    padding: 10px 30px;
     margin: 0;
 
     #list-head {
@@ -44,4 +44,21 @@
             width: 80px;
             }
         }
+
+    @media (max-width: 576px) {
+        padding: 10px 10px 0;
+    }        
+}
+
+@mixin height-auto {
+    @media (max-width: 1200px) {
+        height: auto;
     }
+}
+
+@mixin error ($color) {
+        position: absolute;
+        text-align: left;
+        font-size: 14px;
+        color: $color;
+}

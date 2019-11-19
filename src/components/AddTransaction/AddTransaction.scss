@@ -1,11 +1,12 @@
 @import '../../styles/variables.scss';
+@import '../../styles/mixins.scss';
 
 
 #add-trasaction {
     padding: 10px;
     color: $mainColor;
     height: 35vh;
-    border-right: 2px solid $mainColor;
+    @include height-auto;
 
     h2 {
         text-align: center;
@@ -15,49 +16,70 @@
         display: flex;
         justify-content: space-between;
         flex-wrap: wrap;
+        margin-bottom: 30px;
+
+        @media (max-width: 576px) {
+            margin-bottom: 10px;
+        }
         
+        .inputs {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+
         input {
-            margin: 35px 10px 5px 30px;
+            margin: 15px 10px;
             padding: 5px;
             font-size: 18px;
             color: $mainColor;
             border: 2px solid rgb(214, 214, 214);
             border-radius: 5px;
-            width: 25vw;
+            max-width: 300px;
             outline: none;
-            position: relative;
         }
 
-        .input-error {
-            position: absolute;
-            margin: 5px 10px 5px 30px;
-        }
-
-        .currency {
+        input.currency {
             width: 80px;
-            margin: 35px 0 5px 30px;
         }
 
-        .righ-side {
-            display: flex;
-            flex-wrap: wrap;
-        }
+        .input-content {
+            position: relative;
 
-        button {
-            font-size: 18px;
-            margin: 35px 30px 5px;
-            padding: 7px 14px;
-            border-radius: 5px;
-            border: none;
-            background-color: $mainColor;
-            color: white;
-            outline: 0;
-            transition: 0.2s all;
+            @media (max-width: 576px) {
+                width: 100%;
+            }
 
-            &:hover {
-                cursor: pointer;
-                background-color: $hoverColor;
+            .input-title-errors {
+                @include error($mainColor);
+                top: 55px;
+                left: 10px;
+                width: 180px;
+            }
+
+            .input-eur-errors {
+                @include error($mainColor);
+                top: 55px;
+                left: 10px;
+                width: 260px;
+            }
+
+            button {
+                font-size: 18px;
+                margin: 15px 10px;
+                padding: 7px 14px;
+                border-radius: 5px;
                 border: none;
+                background-color: $mainColor;
+                color: white;
+                outline: 0;
+                transition: 0.2s all;
+    
+                &:hover {
+                    cursor: pointer;
+                    background-color: $hoverColor;
+                    border: none;
+                }
             }
         }
     }

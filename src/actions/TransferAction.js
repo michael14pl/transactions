@@ -8,7 +8,7 @@ export const deleteTransfer = (id) => {
 export const addTransfer = (name, amount) => {
     let id = Math.random();
     let date = Date.now();
-    console.log(name)
+
     return {
         type: 'ADD_TRANSFER',
         name,

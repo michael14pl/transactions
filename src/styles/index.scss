@@ -9,12 +9,28 @@ body {
 }
 
 h1 {
+    margin: 0;
+    padding: 10px;
+    text-align: center;
     font-size: 3.5rem;
     font-weight: bold;
-    margin: 0;
+    
+    @media (max-width: 992px) {
+        font-size: 3rem;
+    }
+
+    @media (max-width: 576px) {
+        font-size: 2.5rem;
+    }
 }
 
 h2 {
     font-size: 2rem;
     margin: 16px 32px;
+    
+    @media (max-width: 576px) {
+        font-size: 1.75rem;
+        margin: 8px 16px 12px;
+
+    }
 }

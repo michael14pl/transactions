@@ -1,28 +1,37 @@
 @import '../../styles/variables.scss';
+@import '../../styles/mixins.scss';
 
 
 #head {
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 15vh;
     padding: 10px;
+    height: 15vh;
     background-color: $mainColor;
+    @include height-auto;
 }
 
 #converter {
     display: flex;
     align-items: center;
     justify-content: center;
+    padding-left:10px;
     height: 10vh;
-    padding: 10px;
     text-align: center;
     border-bottom: 2px solid $mainColor;
     background-color: rgb(214, 214, 214);
 
+    @media (max-width: 576px) {
+        justify-content: start;
+    }
+
     span {
-        font-size: 1.5rem;
-        letter-spacing: 1px;
+        font-size: 22px;
+
+        @media(max-width: 576px) {
+            font-size: 20px;
+        }
     }
 
     form{
@@ -36,19 +45,19 @@
             border: 2px solid rgb(214, 214, 214);
             border-radius: 5px;
             outline: none;
-            margin: 10px;
-            width: 120px;
+            margin: 10px 5px;
+            width: 90px;
+
+            @media (max-width: 576px) {
+                font-size: 16px;
+            }
         }
 
         .errors-pln {
-            position: absolute;
-            width: auto;
-            padding: 3px 0;
-            text-align: left;
-            top: 30%;
-            left: 140px;
-            width: 290px;
-            color: $mainColor;
+            top: 9px;
+            left: 100px;
+            width: 140px;
+            @include error($mainColor);
         }
     }
 }

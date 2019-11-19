@@ -22,7 +22,7 @@ class AddTransaction extends Component {
 
     handleSubmit = (values) => {
         this.props.addTransfer(values.name, values.amount);
-        document.getElementById('addTransaction-fornik-form').reset();
+        document.getElementById('add-transaction-fornik-form').reset();
     }
 
     render() {
@@ -34,23 +34,23 @@ class AddTransaction extends Component {
                     validationSchema={formValidation}
                     onSubmit={(values) => { this.handleSubmit(values) }}>
                     {({ errors, touched }) => (
-                        <Form id="addTransaction-fornik-form">
-                            <div className="row">
-                                <Field type="text" name="name" placeholder="nazwa transakcji..." />
-                                {(errors.name && touched.name) &&
-                                    <div className="input-error">{errors.name}</div>
-                                }
-                            </div>
-                            <div className="righ-side">
-                                <div className="row">
-                                    <Field className="currency" name="amount" type="text" placeholder="EUR" />
-                                    {(errors.amount && touched.amount) &&
-                                        <div className="input-error">{errors.amount}</div>
+                        <Form id="add-transaction-fornik-form">
+                            <div className="inputs">
+                                <div className="input-content">
+                                    <Field type="text" name="name" placeholder="nazwa transakcji..." />
+                                    {(errors.name && touched.name) &&
+                                        <div className="input-title-errors">{errors.name}</div>
                                     }
                                 </div>
-                                <div className="row">
-                                    <button type="submit">Zapisz</button>
+                                <div className="input-content">
+                                    <Field className="currency" name="amount" type="text" placeholder="EUR" />
+                                    {(errors.amount && touched.amount) &&
+                                        <div className="input-eur-errors">{errors.amount}</div>
+                                    }
                                 </div>
+                            </div>
+                            <div className="input-content">
+                                <button type="submit">Zapisz</button>
                             </div>
                         </Form>
                     )}

@@ -1,20 +1,38 @@
 @import '../../styles/variables.scss';
+@import '../../styles/mixins.scss';
 
 
 #transaction-sum {
+    position: relative;
     display: flex;
     align-items: center;
     justify-content: center;
     height: 25vh;
     padding: 10px;
     background-color: $mainColor;
+    @include height-auto;
     
     h2 {
         text-align: center;
+        padding: 30px 0;
+    } 
+    
+    #signature {
+        position: absolute;
+        bottom: 5px;
+        right: 5px;
+        font-size: 14px;
+        font-weight: 500;
+        color: $hoverColor;
 
-        span {
-            margin: 0 20px;
-            font-size: 3rem;
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: 0.2s all;
+
+            &:hover {
+                color: white;
+            }
         }
-    }    
+    }
 }

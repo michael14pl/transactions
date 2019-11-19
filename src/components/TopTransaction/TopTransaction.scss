@@ -8,7 +8,7 @@
     height: 40vh;
     color: $mainColor;
     border-top: 2px solid $mainColor;
-    border-right: 2px solid $mainColor;
+    @include height-auto;
 
     h2{ 
         text-align: center;
@@ -19,24 +19,6 @@
         
         li {
         padding: 0 160px 10px 0;
-        }
-    }
-
-    #signature {
-        position: absolute;
-        bottom: 10px;
-        font-size: 14px;
-        font-weight: 500;
-        color: $hoverColor;
-
-        a{
-            text-decoration: none;
-            color: inherit;
-            transition: 0.2s all;
-
-            &:hover {
-                color: black;
-            }
         }
     }
 }

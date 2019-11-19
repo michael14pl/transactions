@@ -26,7 +26,6 @@ const TopTransaction = ({ transactionsSorted, pln }) => {
                     })
                 }
             </ul>
-            <span id="signature">Created by <a href="https://michal-kawa.herokuapp.com" rel="noopener noreferrer">Michał Kawa</a></span>
         </div>
     )
 }

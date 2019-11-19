@@ -1,12 +1,25 @@
 #content {
     display: flex;
+    flex-wrap: wrap;
 
     #content-left {
         width: 45vw;
     }
+
+    @media (max-width: 1200px) {
+        #content-left {
+            width: 100vw;
+        }   
+    }
     
     #content-right {
         width: 55vw;
+    }
+
+    @media (max-width: 1200px) {
+        #content-right {
+            width: 100vw;
+        }   
     }
 }
 
