@@ -1,10 +1,8 @@
-import React, { Component } from 'react';
+import React, { useContext } from 'react';
 import * as Yup from 'yup';
-import { connect } from 'react-redux';
-import { euroCost } from '../../actions/TransferAction';
 import { Formik, Form, Field } from 'formik';
 import './Converter.scss';
-
+import { ConverterContext } from '../../contexts/ConverterContext';
 
 
 const formValidation = Yup.object().shape({
@@ -14,54 +12,40 @@ const formValidation = Yup.object().shape({
 })
 
 
-class Converter extends Component {
+const Converter = () => {
 
-    handleSubmit = (values) => {
-        this.props.euroCost(values.pln);
+    let { pln, dispatch } = useContext(ConverterContext);
+
+    const handleSubmit = (values) => {
+        dispatch({ type: 'CHANGE_PLN_VALUE', pln: parseFloat(values.pln).toFixed(2) });
         document.getElementById('coverter-fornik-form').reset()
     }
 
-    render() {
-        let pln = this.props.pln;
-        pln += " PLN"
-        return (
-            <div>
-                <div id="head">
-                    <h1>Transakcje walutowe</h1>
-                </div>
-                <div id="converter">
-                    <span>1 EUR = </span>
-                    <Formik
-                        initialValues={{ pln: '' }}
-                        validationSchema={formValidation}
-                        onSubmit={(values) => { this.handleSubmit(values) }}>
-
-                        {({ errors, touched }) => (
-                            <Form id="coverter-fornik-form">
-                                <Field id="a" name="pln" type="text" placeholder={pln} />
-                                {(errors.pln && touched.pln) &&
-                                    <div className="errors-pln">{errors.pln}</div>
-                                }
-                            </Form>
-                        )}
-                    </Formik>
-                </div>
+    pln += " PLN"
+    return (
+        <div>
+            <div id="head">
+                <h1>Transakcje walutowe</h1>
             </div>
-        )
-    }
+            <div id="converter">
+                <span>1 EUR = </span>
+                <Formik
+                    initialValues={{ pln: '' }}
+                    validationSchema={formValidation}
+                    onSubmit={(values) => { handleSubmit(values) }}>
+                    {({ errors, touched }) => (
+                        <Form id="coverter-fornik-form">
+                            <Field id="a" name="pln" type="text" placeholder={pln} />
+                            {(errors.pln && touched.pln) &&
+                                <div className="errors-pln">{errors.pln}</div>
+                            }
+                        </Form>
+                    )}
+                </Formik>
+            </div>
+        </div>
+    )
 }
 
-const mapStateToProps = (state) => {
-    return {
-        pln: state.transactions.pln
-    }
-}
 
-const mapDispatchToProps = (dispatch) => {
-    return {
-        euroCost: (pln) => { dispatch(euroCost(pln)) }
-    }
-}
-
-
-export default connect(mapStateToProps, mapDispatchToProps)(Converter);
+export default Converter;

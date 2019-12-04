@@ -1,9 +1,12 @@
-import React from 'react';
-import { connect } from 'react-redux';
+import React, { useContext } from 'react';
 import './TransactionSum.scss';
+import { TransactionsContext } from '../../contexts/TransactionsContext';
 
 
-const TransactionSum = ({ transactions }) => {
+const TransactionSum = () => {
+
+    const { transactions } = useContext(TransactionsContext);
+
     return (
         <div id="transaction-sum">
             {transactions.length !== 0 ?
@@ -16,10 +19,5 @@ const TransactionSum = ({ transactions }) => {
     )
 }
 
-const mapStateToProps = (state) => {
-    return {
-        transactions: state.transactions.transactions
-    }
-}
 
-export default connect(mapStateToProps)(TransactionSum);
+export default TransactionSum;

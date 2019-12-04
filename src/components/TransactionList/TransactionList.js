@@ -1,12 +1,13 @@
-import React from 'react';
-import { connect } from 'react-redux';
+import React, { useContext } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { deleteTransfer } from '../../actions/TransferAction';
-import { euroConverter } from '../../functions/euroConverter';
 import './TransactionList.scss';
+import { TransactionsContext } from '../../contexts/TransactionsContext';
+import { ConverterContext } from '../../contexts/ConverterContext';
 
 
-const TransactionList = ({ transactions, pln, deleteTransfer }) => {
+const TransactionList = () => {
+    const { transactions, dispatch } = useContext(TransactionsContext);
+    const { pln } = useContext(ConverterContext);
     return (
         <div id="transaction-list">
             <h2>Lista transakcji</h2>
@@ -23,8 +24,8 @@ const TransactionList = ({ transactions, pln, deleteTransfer }) => {
                             <li key={transaction.id}>
                                 <span>{transaction.name}</span>
                                 <span className="first" > {transaction.amount}</span>
-                                <span className="second"> {euroConverter(transaction.amount, pln)}</span>
-                                <span className="third icon"><FontAwesomeIcon icon="trash" onClick={() => { deleteTransfer(transaction.id) }} /></span>
+                                <span className="second"> {(transaction.amount * pln).toFixed(2)}</span>
+                                <span className="third icon"><FontAwesomeIcon icon="trash" onClick={() => dispatch({ type: 'DELETE_TRANSACTION', id: transaction.id })} /></span>
                             </li>
                         )
                     })}
@@ -33,19 +34,4 @@ const TransactionList = ({ transactions, pln, deleteTransfer }) => {
     )
 }
 
-
-const mapStateToProps = (state) => {
-    return {
-        transactions: state.transactions.transactions,
-        pln: state.transactions.pln
-    }
-}
-
-const mapDispatchToProps = (dispatch) => {
-    return {
-        deleteTransfer: (id) => { dispatch(deleteTransfer(id)) },
-    }
-}
-
-
-export default connect(mapStateToProps, mapDispatchToProps)(TransactionList);
+export default TransactionList;
