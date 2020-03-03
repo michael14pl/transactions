@@ -1,53 +1,52 @@
-@import '../../styles/variables.scss';
-@import '../../styles/mixins.scss';
-
+@import "../../styles/variables.scss";
+@import "../../styles/mixins.scss";
 
 #transaction-list {
-    padding: 10px;
-    color: $mainColor;
-    min-height: 50vh;
-    border-left: 2px solid $mainColor;
+  padding: 10px;
+  color: $mainColor;
+  min-height: 50vh;
+  border-left: 2px solid $mainColor;
 
-    h2 { 
-        text-align: center;
-    }
+  h2 {
+    text-align: center;
+  }
 
-    ul {
-        @include list;
+  ul {
+    @include list;
 
-        li {
-            padding: 0 240px 10px 0;
+    li {
+      padding: 0 240px 10px 0;
 
-            @media (max-width: 576px) {
-                padding: 0 200px 10px 0;
-    
-                span.third {
-                    width: 40px;
-                }
-    
-                span.second {
-                    right: 40px;
-                }
-        
-                span.first {
-                    right: 120px;
-                }
-            }
+      @media (max-width: 576px) {
+        padding: 0 200px 10px 0;
+
+        span.third {
+          width: 40px;
         }
 
-        .icon {
-            cursor: pointer;
-            transition: 0.2s all;
-
-            &:hover {
-                color: $hoverColor;
-            }
+        span.second {
+          right: 40px;
         }
+
+        span.first {
+          right: 120px;
+        }
+      }
     }
 
-    @media (max-width: 1200px) {
-        border-left: none;
-        border-top: 2px solid $mainColor;
-        min-height: auto;
+    .icon {
+      cursor: pointer;
+      transition: 0.2s all;
+
+      &:hover {
+        color: $hoverColor;
+      }
     }
+  }
+
+  @media (max-width: 1200px) {
+    border-left: none;
+    border-top: 2px solid $mainColor;
+    min-height: auto;
+  }
 }

@@ -1,24 +1,23 @@
-@import '../../styles/variables.scss';
-@import '../../styles/mixins.scss';
-
+@import "../../styles/variables.scss";
+@import "../../styles/mixins.scss";
 
 #top-transaciton {
-    position: relative;
-    padding: 10px;
-    height: 40vh;
-    color: $mainColor;
-    border-top: 2px solid $mainColor;
-    @include height-auto;
+  position: relative;
+  padding: 10px;
+  height: 40vh;
+  color: $mainColor;
+  border-top: 2px solid $mainColor;
+  @include height-auto;
 
-    h2{ 
-        text-align: center;
-    }
+  h2 {
+    text-align: center;
+  }
 
-    ul {
-        @include list;
-        
-        li {
-        padding: 0 160px 10px 0;
-        }
+  ul {
+    @include list;
+
+    li {
+      padding: 0 160px 10px 0;
     }
+  }
 }
